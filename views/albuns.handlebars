@@ -1,0 +1,19 @@
+{{>_log}}
+<h2>Albuns</h2>
+<div class="row">
+  {{#each albuns}}
+  <div class="col-12 col-sm-6 col-md-4 mt-4">
+    <a href="/album/{{slug}}" class="card-link">
+      <div class="card">
+        {{!-- <img src="/img/{{imagem}}" class="card-img-top" alt="..."> --}}
+        <div class="card-body">
+          <h5 class="card-title">{{titulo}}</h5>
+          <p class="card-text">{{totalMusicas}} Músicas</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  {{else}}
+  <h4>Não existe nenhum album adicionado</h4>
+  {{/each}}
+</div>

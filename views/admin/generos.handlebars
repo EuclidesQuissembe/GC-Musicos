@@ -1,0 +1,18 @@
+{{>_log}}
+
+<div class="row">
+  <div class="col-12 col-sm-8 col-md-10">
+    <h3>Gêneros</h3>
+  </div>
+  <div class="col-12 col-sm-4 col-md-2">
+    <a href="/admin/genero/adicionar" class="btn btn-primary btn-sm" role="button">Adicionar Gênero</a>
+  </div>
+</div>
+
+<div class="list-group">
+  {{#each generos}}
+  <a href="#" class="list-group-item list-group-item-action">{{nome}}</a>
+  {{else}}
+  <h4>Não existe gêneros adicionados</h4>
+  {{/each}}
+</div>

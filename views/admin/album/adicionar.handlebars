@@ -1,0 +1,29 @@
+{{>_log}}
+<div class="container">
+  <h3>Adicionar um novo album</h3>
+
+  <form action="/admin/adicionar-album" method="POST">
+    <div class="form-group">
+      <label for="titulo">Título</label>
+      <input type="text" name="titulo" id="titulo" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <textarea type="text" name="descricao" id="descricao" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="ano">Ano de Lançamento</label>
+      <input type="text" name="ano" id="ano" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="artista">Proprietário do Album</label>
+      <input list="list-artistas" id="artista" name="artista" autocomplete="off" class="form-control" />
+    </div>
+    <datalist id="list-artistas">
+      {{#each artistas}}
+      <option value="{{nome}}">
+        {{/each}}
+    </datalist>
+    <input type="submit" value="Adicionar Album" class="btn btn-primary" role="button">
+  </form>
+</div>

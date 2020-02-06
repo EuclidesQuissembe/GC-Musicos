@@ -1,0 +1,18 @@
+{{>_log}}
+<h2>Artistas</h2>
+<div class="row">
+  {{#each artistas}}
+  <div class="col-12 col-sm-6 col-md-4 mt-4">
+    <a href="/artista/{{slug}}" class="card-link">
+      <div class="card">
+        {{!-- <img src="/img/{{imagem}}" class="card-img-top" alt="..."> --}}
+        <div class="card-body">
+          <h5 class="card-title">{{nome}}</h5>
+        </div>
+      </div>
+    </a>
+  </div>
+  {{else}}
+  <h3>Não existe nenhum artista adicionado</h3>
+  {{/each}}
+</div>

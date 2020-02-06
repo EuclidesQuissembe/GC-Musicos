@@ -1,0 +1,18 @@
+{{>_log}}
+<h2>Músicas</h2>
+
+<div class="row">
+  {{#each musicas}}
+  <div class="col-12 col-sm-6 col-md-4 mt-4">
+    <div class="card">
+      {{!-- <img src="/img/{{imagem}}" class="card-img-top" alt="{{titulo}}"> --}}
+      <div class="card-body">
+        <h5 class="card-title">{{titulo}}</h5>
+        <a href="/admin/editar-musica/{{slug}}" class="card-link">Editar</a>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <h4>Nenhuma música adicionada</h4>
+  {{/each}}
+</div>

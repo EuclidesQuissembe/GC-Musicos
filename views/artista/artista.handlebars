@@ -1,0 +1,57 @@
+<header>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-5">
+      <img src="/img/{{artista.imagem}}" alt="Fundo do Artista" class="w-100 card-img" />
+    </div>
+    <div class="col-12 col-sm-6 col-md-7">
+      <h2>{{artista.nome}}</h2>
+      <p class="text-muted">{{artista.descricao}}</p>
+    </div>
+  </div>
+</header>
+
+<hr>
+
+<section>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-8 border-right">
+      <h4 class="text-muted">Músicas</h4>
+      <div class="list-group list-group-flush">
+        {{#each musicas}}
+        <a href="/musica/{{slug}}" class="list-group-item list-group-item-action">
+          <div class="row">
+            <div class="col-12 col-sm-4">{{titulo}}</div>
+            <div class="col-12 col-sm-4">{{genero.nome}}</div>
+            <div class="col-12 col-sm-2">{{ano}}</div>
+            <div class="col-12 col-sm-2">{{duracao}}</div>
+          </div>
+        </a>
+        {{else}}
+        <h5>Nenhuma música</h5>
+        {{/each}}
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4">
+      <h4 class="text-muted">Albuns</h4>
+      {{#each albuns}}
+      <a href="/album/{{slug}}" class="card-link">
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="/img/{{imagem}}" class="card-img h-100" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{titulo}}</h5>
+                <p class="card-text">{{totalMusicas}} Músicas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      {{else}}
+      <h6>Nenhum album</h6>
+      {{/each}}
+    </div>
+  </div>
+</section>

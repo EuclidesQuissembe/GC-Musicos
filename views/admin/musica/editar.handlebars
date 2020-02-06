@@ -1,0 +1,72 @@
+<div class="container">
+  <h3>Editar música</h3>
+
+  <form action="/admin/editar-musica/{{musica.slug}}" method="POST" id="formulario">
+    <div class="form-group">
+      <label for="titulo">Título</label>
+      <input type="text" name="titulo" id="titulo" class="form-control" value="{{musica.titulo}}" />
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <textarea type="text" name="descricao" id="descricao" class="form-control">{{musica.descricao}}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="letra">Letra</label>
+      <input type="text" name="letra" id="letra" class="form-control" value="{{musica.letra}}" />
+    </div>
+    <div class="form-group">
+      <label for="ano">Ano de Lançamento</label>
+      <input type="text" name="ano" id="ano" class="form-control" value="{{musica.ano}}" />
+    </div>
+    <div class="form-group">
+      <label for="duracao">Duração</label>
+      <input type="text" name="duracao" id="duracao" class="form-control" value="{{musica.duracao}}" />
+    </div>
+    <div class="form-group">
+      <label for="genero">Gênero</label>
+      <select name="genero" id="genero" class="form-control" required>
+        <option value="">Selecione o genero</option>
+        {{#each generos}}
+        <option value="{{_id}}">{{nome}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div id="artistas">
+      <div id="accoes" class="text-right">
+        <button type="button" id="adicionar" class="btn btn-primary btn-small">Adicionar mais um artista</button>
+      </div>
+      <datalist id="list-artistas">
+        {{#each todosArtistas}}
+        <option value="{{nome}}" />
+        {{/each}}
+      </datalist>
+      <input list="list-artistas" id="artista" name="artista" autocomplete="off" class="form-control" hidden />
+      {{!-- <div class="form-group">
+        <label for="artista">Artista Principal</label>
+        <input list="list-artistas" id="artista-1" name="artista-1" autocomplete="off"
+          class="form-control nome-artistas" />
+      </div> --}}
+    </div>
+    <datalist id="list-albuns">
+      {{#each todosAlbuns}}
+      <option value="{{titulo}}" />
+      {{/each}}
+    </datalist>
+    <div class="form-group">
+      <label for="album">Album</label>
+    {{#if album}}
+      <input list="list-albuns" name="album" id="album" class="form-control" autocomplete="off" value="{{album.titulo}}" />
+    {{else}}
+      <input list="list-albuns" name="album" id="album" class="form-control" autocomplete="off" />
+    {{/if}}
+    </div>
+    <input type="submit" value="Atualizar Dados" class="btn btn-primary" role="button">
+  </form>
+</div>
+
+<script src="/js/musica.js"></script>
+<script>
+  {{#each artistas}}
+  AdicionarCampo("{{nome}}")
+  {{/each}}
+</script>

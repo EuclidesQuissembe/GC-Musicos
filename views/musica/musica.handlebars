@@ -1,0 +1,35 @@
+<header>
+  <h2>Título: {{musica.titulo}}</h2>
+</header>
+
+<section>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-8 border-right">
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td>Duração: {{musica.duracao}}</td>
+            <td>Descrição: {{musica.descricao}}</td>
+            <td>Gênero: {{musica.genero.nome}}</td>
+          </tr>
+          <tr>
+            {{#if musica.idAlbum}}
+            <td>Album: <a href="/album/{{musica.idAlbum.slug}}">{{musica.idAlbum.titulo}}</a></td>
+            {{else}}
+            <td>Album: Sem album</td>
+            {{/if}}
+            <td><a href="{{musica.letra}}" target="_blank">Letra</a></td>
+            <td>Ano de Lançamento: {{musica.ano}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4">
+      <h4 class="text-muted">Actor(es) da Música</h4>
+      <div class="list-group list-group-flush">
+        {{#each musica.idArtistas}}
+        <a href="/artista/{{slug}}" class="list-group-item list-group-item-action">{{nome}}</a>
+        {{/each}}
+      </div>
+    </div>
+</section>

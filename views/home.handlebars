@@ -1,0 +1,27 @@
+{{>_log}}
+<div class="jumbotron">
+  <h1 class="display-4">Blog de Músicas</h1>
+  <p class="lead">Desenvolvi esse blog para que eu possa ver até onde posso chegar. Tudo que vires aqui é apenas por um perído de tempo, os conhecimentos são aumentados a cada dia que passa...</p>
+  <p class="lead">"Aquele que tentou e não conseguiu, é melhor do que aquele que não tentou"</p>
+  <hr class="my-4">
+  <p>Desenvolvido por Euclides Bernardo</p>
+  <p class="mb-0">Visite já o meu <a href="https://www.euclidesbernardo.com" target="_blank">Portfólio</a></p>
+</div>
+
+<h4>Alguns Artistas</h4>
+<div class="row">
+  {{#each tresArtistas}}
+  <div class="col-12 col-sm-6 col-md-4 mt-4">
+    <div class="card">
+      {{!-- <img src="/img/{{imagem}}" class="card-img-top" alt="..."> --}}
+      <div class="card-body">
+        <h5 class="card-title">{{nome}}</h5>
+        <p class="card-text">{{descricao}}</p>
+        <a href="/artista/{{slug}}" type="button" class="btn btn-primary btn-sm">Saber mais</a>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <h5>Não existe nenhum artista adicionado</h5>
+  {{/each}}
+</div>

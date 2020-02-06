@@ -1,0 +1,17 @@
+<h2>Albuns</h2>
+{{>_log}}
+<div class="row">
+  {{#each albuns}}
+  <div class="col-12 col-sm-6 col-md-4 mt-4">
+    <div class="card">
+      {{!-- <img src="/img/{{imagem}}" class="card-img-top" alt="..."> --}}
+      <div class="card-body">
+        <h5 class="card-title">{{titulo}}</h5>
+        <a href="/admin/editar-album/{{slug}}">Editar</a>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <h4>Não existe nenhum album adicionado</h4>
+  {{/each}}
+</div>
