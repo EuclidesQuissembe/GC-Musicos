@@ -1,0 +1,24 @@
+{
+  "name": "gc-musicos",
+  "version": "1.0.0",
+  "description": "Gestor de conteúdo para o gerenciamento dos músicos que estarão na API",
+  "main": "server.js",
+  "author": "Euclides J. Q. Bernardo",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.8.0",
+    "mongoose-paginate": "^5.0.3",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "scripts": {
+    "start": "nodemon ./bin/server.js"
+  }
+}
